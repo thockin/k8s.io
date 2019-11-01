@@ -48,6 +48,9 @@ PROW_SVCACCT="deployer@k8s-prow.iam.gserviceaccount.com"
 GCP_ORG="758905017065" # kubernetes.io
 GCP_BILLING="018801-93540E-22A20E"
 
+# The regions we use for "prod" GCR.
+PROD_GCR_REGIONS=(us eu asia)
+
 # Get the GCS bucket name that backs a GCR repo.
 # $1: The GCR repo (same as the GCP project name)
 # $2: The GCR region (optional)
