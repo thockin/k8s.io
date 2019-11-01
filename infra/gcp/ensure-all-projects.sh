@@ -128,6 +128,19 @@ empower_group_to_fake_prod \
     "k8s-infra-staging-cip-test@kubernetes.io"
 
 #////////////////////////////////////////////////////////////////
+# These are for testing the GCR auditing process.
+
+GCR_AUDIT_TEST_PROD_PROJECT="k8s-gcr-audit-test-prod"
+
+./prod-project.sh "${GCR_AUDIT_TEST_PROD_PROJECT}"
+
+# Special case: grant the image promoter testing group access to their fake
+# prod projects.
+empower_group_to_fake_prod \
+    "${GCR_AUDIT_TEST_PROD_PROJECT}" \
+    "k8s-infra-staging-cip-test@kubernetes.io"
+
+#////////////////////////////////////////////////////////////////
 # This is for testing the release tools.
 
 RELEASE_TEST_PROD_PROJECT="k8s-release-test-prod"
